@@ -5,10 +5,10 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import api.utfpr.projeto2.dtos.ConfirmationDto;
@@ -39,7 +39,7 @@ public class ConfirmationController {
     }
 
     @GetMapping("/{ra}")
-    public List<ConfirmationDtoResponse> getRaConfirmations(@RequestParam String ra){
+    public List<ConfirmationDtoResponse> getRaConfirmations(@PathVariable String ra){
         List<ConfirmationDtoResponse> confirmationDtoResponses = new ArrayList<>();
         List<Confirmation> confirmations = this.confirmationService.getByRa(ra);
         for(Confirmation confirmation : confirmations){
