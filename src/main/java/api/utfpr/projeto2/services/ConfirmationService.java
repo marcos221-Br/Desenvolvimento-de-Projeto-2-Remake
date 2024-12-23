@@ -18,10 +18,6 @@ public class ConfirmationService {
         return this.confirmationRepository.save(confirmation);
     }
 
-    public List<Confirmation> getAllConfirmations(){
-        return this.confirmationRepository.findAll();
-    }
-
     public List<Confirmation> getByRa(String ra){
         return this.confirmationRepository.findByRa(ra);
     }

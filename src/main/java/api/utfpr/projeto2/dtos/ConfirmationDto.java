@@ -18,9 +18,8 @@ public class ConfirmationDto {
     private String professor;
     private Boolean emailReceived;
     private Boolean emailRead;
-    private Date date;
 
     public Confirmation confirmationObject(){
-        return new Confirmation(ra,student,email,professor,emailReceived,emailRead,Date.valueOf(date.toLocalDate().plusDays(1)));
+        return new Confirmation(ra,student,email,professor,emailReceived,emailRead,new Date(System.currentTimeMillis()));
     }
 }

@@ -28,16 +28,6 @@ public class ConfirmationController {
         return ConfirmationDtoResponse.confirmationDto(this.confirmationService.createConfirmation(confirmationDto.confirmationObject()));
     }
 
-    @GetMapping
-    public List<ConfirmationDtoResponse> getAllConfirmations(){
-        List<ConfirmationDtoResponse> confirmationDtoResponses = new ArrayList<>();
-        List<Confirmation> confirmations = this.confirmationService.getAllConfirmations();
-        for(Confirmation confirmation : confirmations){
-            confirmationDtoResponses.add(ConfirmationDtoResponse.confirmationDto(confirmation));
-        }
-        return confirmationDtoResponses;
-    }
-
     @GetMapping("/{ra}")
     public List<ConfirmationDtoResponse> getRaConfirmations(@PathVariable String ra){
         List<ConfirmationDtoResponse> confirmationDtoResponses = new ArrayList<>();

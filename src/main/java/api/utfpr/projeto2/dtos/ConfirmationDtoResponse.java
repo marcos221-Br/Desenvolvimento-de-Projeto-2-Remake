@@ -11,9 +11,6 @@ import lombok.Getter;
 @Getter
 public class ConfirmationDtoResponse {
     
-    private Integer id;
-    private String ra;
-    private String student;
     private String email;
     private String professor;
     private Boolean emailReceived;
@@ -21,6 +18,6 @@ public class ConfirmationDtoResponse {
     private Date date;
 
     public static ConfirmationDtoResponse confirmationDto(Confirmation confirmation){
-        return new ConfirmationDtoResponse(confirmation.getId(),confirmation.getRa(),confirmation.getStudent(),confirmation.getEmail(),confirmation.getProfessor(),confirmation.getEmailReceived(),confirmation.getEmailRead(),confirmation.getDate());
+        return new ConfirmationDtoResponse(confirmation.getEmail(),confirmation.getProfessor(),confirmation.getEmailReceived(),confirmation.getEmailRead(),confirmation.getDate());
     }
 }
