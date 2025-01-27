@@ -39,14 +39,12 @@ Todas as requisições são realizadas por meio de protocolos *HTTP* definidos n
 #### Usuário
 
 ```http
-> GET /api/confirmation
 > GET /api/confirmation/${ra}
 > POST /api/confirmation
 ```
 
 | Requisição | Onde | Parâmetro                                                      | Tipo                                                 | Descrição                                                                       | **Retorno**                                              | Tipo                                       |
 | :----------: | :--: | --------------------------------------------------------------- | ---------------------------------------------------- | --------------------------------------------------------------------------------- | -------------------------------------------------------------- | ------------------------------------------ |
-|     GET     |      |                                                                 |                                                      |                                                                                   | `List<{ email, professor, emailReceived, EmailRead, date }>` | `String, String, Boolean, Boolean, Date` |
 |     GET     | URL | `ra`                                                          | `String`                                           | **Obrigatório.** O RA do aluno que você quer                             | `List<{ email, professor, emailReceived, EmailRead, date }>` | `String, String, Boolean, Boolean, Date` |
 |     POST     | Body | `{ ra, student, email, professor, emailReceived, emailRead }` | `String, String, String, String, Boolean, Boolean` | **Obrigatório** Ra, Student, Email, Professor, EmailReceived e EmailRead. | `{ email, professor, emailReceived, EmailRead, date }`       | `String, String, Boolean, Boolean, Date` |
 
