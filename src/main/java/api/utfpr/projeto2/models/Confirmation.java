@@ -48,11 +48,11 @@ public class Confirmation implements Serializable{
     private String professor;
 
     @Basic(optional = false)
-    @Column(name = "emailreceived", nullable = false)
+    @Column(name = "emailreceived")
     private Boolean emailReceived;
 
     @Basic(optional = false)
-    @Column(name = "emailRead", nullable = false)
+    @Column(name = "emailRead")
     private Boolean emailRead;
 
     @Basic(optional = false)
